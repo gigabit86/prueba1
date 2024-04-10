@@ -1,0 +1,144 @@
+/*¨
+//Crud en Local Storage
+//Samuel Andres Leon Valencia
+*/
+
+body {                           /* caracterisitcas del body */
+    font-family: sans-serif;
+    margin: 0 50px;
+    background-color: #202020;
+    overflow: hidden;          /* regular la visiblidad de los contenidos*/
+    display: flex;               /* flexible para alterar sus dimensiones y llenar el espacio disponible */
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+  }
+
+  .app {                        /* caracteristticas de  <div class="app"> */
+    background-color: #6a6464db;
+    width: 300px;
+    height: 500px;
+    border: 5px solid #343534;
+    border-radius: 8px;
+    padding: 15px;     
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);      
+     /*añade relleno entre el elemento y su contenido.*/
+  }
+
+  #addNew {                  /* caracteristicas de  <div id="addNew" */
+    display: flex;
+    justify-content: space-between;         /*Los items flex se distribuyen uniformemente sobre la línea*/
+    align-items: center;
+    background-color: rgba(35, 36, 35, 0.35);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+  }
+  .fa-plus {                     /* caracteristicas de <i class="fas fa-plus"></i>*/
+    background-color: #303030;
+    padding: 3px;
+    border-radius: 3px;
+  }
+
+  .titulo {                      /* caracteristicas de <h1 class="titulo"> */
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .small {                      /* caracteristicas de <p class="small"> */
+    color: #fff;
+  }
+
+  .tareas {                      /* caracteristicas de <h2 class="tareas"> */
+    color: #fff;
+    text-align: center;
+  }
+
+
+  #msg {                        /* caracteriticas de  <div id="msg"></div>  */
+    color: red;
+  }
+
+
+  #tasks {                   /* caracteristicas de   <div id="tasks"></div>  */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  #tasks div {              /* caracteriticas de <div id="tasks"></div> */
+    border: 3px solid #4f504f;
+    background-color: #353535;
+    border-radius: 6px;
+    padding: 5px;
+    display: grid;
+    gap: 4px;  /*especifica el tamaño de las canaletas, que es el espacio entre filas */
+    color: #fff;
+  }
+
+ 
+  #tasks div .options {    /* caracteriticas de <div id="tasks"></div> */
+    justify-self: center;
+    display: flex;
+    gap: 20px;
+  }
+  
+  #tasks div .options i {  /* caracteriticas de <div id="tasks"></div> */
+    cursor: pointer;   /* cursor manito */
+  }
+
+
+
+
+.container i {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    top: -10px;
+    background: #616060;
+    animation: lluvia linear infinite;
+}
+
+/* centrando contenido de del div */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes lluvia {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100vh;
+    }
+}
+
+
+
+
+/* clases para agregar video como fondo */
+#video_background {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  }
+  #video_pattern {
+  background:#fff;
+  position: fixed;
+  opacity: 0.8;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  }
