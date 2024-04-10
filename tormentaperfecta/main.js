@@ -19,29 +19,38 @@ form.addEventListener("submit", (e) => {      //form es el formulario..se pregun
     formValidation();           //lamar a la funcion
   });
   
-  let formValidation = () => {             
-    if (textInput.value === "") {                          //verifica si los inputs estan vacios o no
-      console.log("failure");
-      msg.innerHTML = "Tarea requerida";
-         //msg es un div en html <div id="msg"></div> antes del buttom
-                           // innerHTML  nnerHTML  es una propiedad que nos permite leer un dato o asignarlo al contenido de un div o bien, 
-                             // del mismo control. Nos facilita la asignación de valores a controles.
-
+  let formValidation = () => {
+    let error = false; // Variable para controlar si hay errores
+    
+    // Validar campo de texto
+    if (textInput.value.trim() === "") {
+        msg.innerHTML = "- Por favor, ingresa un título para la tarea";
+        error = true;
     } else {
-      console.log("success");
-      msg.innerHTML = "";
-      acceptData();          //llama a la funcion
-
-      add.setAttribute("data-bs-dismiss", "modal");    //se agrega opciones alternativas a la ventana modal
-      add.click();  
-  
-      (() => {                    //   funcion anonima
-        add.setAttribute("data-bs-dismiss", "");
-      })();
-
-
+        msg.innerHTML = "";
     }
-  };
+
+    // Validar campo de fecha
+    if (dateInput.value === "") {
+        msg.innerHTML += "<br>- Por favor, selecciona una fecha de ejecución";
+        error = true;
+    }
+
+    // Validar campo de descripción
+    if (textarea.value.trim() === "") {
+        msg.innerHTML += "<br>- Por favor, ingresa una descripción para la tarea";
+        error = true;
+    }
+
+    // Si hay errores, detener el proceso
+    if (error) {
+        return;
+    }
+
+    // Si no hay errores, continuar con el proceso de aceptar los datos
+    acceptData();
+    
+};
 
   let data = [];             //definir variable data tipo objeto 
 
@@ -56,6 +65,9 @@ let acceptData = () => {        //funcion
 
   console.log(data);
   createTasks();
+
+  //cerrar modal
+  $("#form").modal("hide");
 };
 
 
@@ -168,4 +180,19 @@ let createTasks = () => {
     $(document).ready(function() {
       var today = new Date().toISOString().split('T')[0];
       $("#dateInput").attr('min', today);
+    });
+
+
+    $(document).ready(function() {
+
+      //validar que el campo textInput debe ser solo letras y espacios
+      $('#textInput').keypress(function(tecla) {
+        if(tecla.charCode < 97 || tecla.charCode > 122) return false;
+      });
+
+      //validar que el campo dateInput debe ser solo numeros
+      $('#dateInput').keypress(function(tecla) {
+        if(tecla.charCode < 48 || tecla.charCode > 57) return false;
+      });
+
     });
