@@ -91,8 +91,24 @@ let createTasks = () => {
             <p>${x.description}</p>
     
             <span class="options">
-              <span onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></span>
-              <span onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></span>
+              
+            <button onclick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary">
+                <p class="paragraph"> Editar </p>
+                <span class="icon-wrapper">
+                <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21,12a1,1,0,0,0-1,1v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4h6a1,1,0,0,0,0-2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM6,12.76V17a1,1,0,0,0,1,1h4.24a1,1,0,0,0,.71-.29l6.92-6.93h0L21.71,8a1,1,0,0,0,0-1.42L17.47,2.29a1,1,0,0,0-1.42,0L13.23,5.12h0L6.29,12.05A1,1,0,0,0,6,12.76ZM16.76,4.41l2.83,2.83L18.17,8.66,15.34,5.83ZM8,13.17l5.93-5.93,2.83,2.83L10.83,16H8Z"/></svg>
+                </span>
+              </button>
+
+
+              <span class="options">
+              <button onclick="deleteTask(this)" class="btn btn-danger">
+                <p class="paragraph"> Eliminar </p>
+                <span class="icon-wrapper">
+                  <svg class="icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </button>
             </span>
           </div>
       `);
@@ -156,11 +172,14 @@ let createTasks = () => {
     $(document).ready(function() {
       //abrir modalAudio    
         $("#modalAudio").modal("show");
+
+        //efecto animate.css a boton play
+        $("#play").addClass("animate__animated animate__pulse animate__infinite");
   
         $("#play").click(function() {
           audio_background.play();
           //animate__hinge es una clase de animate.css para que al salir el modal se vea con un efecto
-          $("#modalAudio").addClass("animate__hinge");
+         // $("#modalAudio").addClass("animate__hinge");
           //sleep(1000) es una funcion que espera 1 segundo
           setTimeout(function() {
             $("#modalAudio").modal("hide");
@@ -195,4 +214,18 @@ let createTasks = () => {
         if(tecla.charCode < 48 || tecla.charCode > 57) return false;
       });
 
+    });
+
+
+    
+
+    $(document).ready(function() {
+        $("#addNew").hover(
+            function() {
+                $(this).addClass("animate__animated animate__tada");
+            },
+            function() {
+                $(this).removeClass("animate__animated animate__tada");
+            }
+        );
     });
