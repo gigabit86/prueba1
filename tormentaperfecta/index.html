@@ -1,103 +1,163 @@
 <!--Crud en Local Storage
 Samuel Andres Leon Valencia
 -->
+
+<!--  HTML es un lenguaje de marcado que se utiliza para el desarrollo de páginas web. -->
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+
+
+<!--  La etiqueta html es la etiqueta raíz de un documento HTML y envuelve todo el contenido de la página web. -->
+<html lang="es" data-bs-theme="dark">
+
+<!--  La etiqueta head es un contenedor de metadatos que proporciona información sobre el documento HTML. -->
 
 <head>
-  <meta charset="UTF-8"> <!-- codificación de caracteres utilizada  utf-8-->
+  <!-- codificación de caracteres utilizada  utf-8 que permite la representación de cualquier carácter en Unicode para que se muestre correctamente en el navegador. -->
+  <meta charset="UTF-8">
+
+  <!--  meta viewport es una etiqueta que se utiliza para ajustar el tamaño de la página web al tamaño del dispositivo que se está utilizando. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- te preparará para la tranquilidad del layout multi-dispositivo:-->
+
   <!--Vamos a usar bootstrap-->
+  <!--  Css y Js de Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
+  <!-- Usaremos librerias de jquery 3.7.1 para manipular el DOM -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!--  Usaremos fontawesome para aplicar algunos iconos a la interfaz -->
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js"
+    integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
+    integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO"
+    crossorigin="anonymous"></script>
 
-  <!--  Red de Distribución de Contenidos -->
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+  <!-- archivo css de estilos personalizados -->
   <link rel="stylesheet" href="estilos.css"> <!-- cargar hoja de estilos -->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!--  animate.css es una biblioteca de animaciones CSS listas para usar que se pueden aplicar a cualquier elemento de la página web. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!--  titulo de la pagina -->
   <title>Tormenta Perfecta</title>
 </head>
 
-<body> 
+<!--  La etiqueta body es un contenedor de todo el contenido de la página web. -->
 
-  <!--  video de fondo y audio de fondo -->
+<body>
+
+
+  <div class="">
+  <!--  agregaremos un video de fondo para darle un efecto visual a la página web, el video se reproducirá en bucle y en silencio con volumen al 50% elque cargara en archivo video2.mp4 -->
   <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50" />
   <source src="fondo/video2.mp4" type="video/mp4" />
+  <source src="fondo/video1.mp4" type="video/mp4" />
   </video>
 
 
-  <!--  audio de fondo -->
+  <!--  agregaremos un audio de fondo para darle un efecto visual a la página web, el audio se reproducirá en bucle y en silencio con volumen al 100% elque cargara en archivo lluvia.mp3 -->
   <audio loop="loop" id="audio_background" preload="auto" volume="100" />
+  <!--  audio de fondo de la tormenta perfecta -->
   <source src="audio/lluvia.mp3" type="audio/mp3" />
   </audio>
 
-  <div class="container">
-    <div id="app" class="app animate__animated animate__infinite"> <!--  div  crear secciones o agrupar contenidos  UN BLOQUE-->
-      <h4 class="mb-3 text-center titulo">Tormenta Perfecta</h4> <!--  encabezado de la pagina con margen de 3 y centrado-->
+  <!--  div es un contenedor del contenido de la página web tiene una clase container que es una clase de bootstrap que centra el contenido en la página web. -->
+  
+
+    <!--  div es un contenedor con id app tiene clase app que es una clase personalizada de estilos css. -->
+    <div id="app" class="app">
+
+      <h4 class="mb-3 text-center titulo">Tormenta Perfecta</h4>
+      <!--  encabezado de la pagina con margen de 3 y centrado -->
 
 
-      <div id="addNew" data-bs-toggle="modal" data-bs-target="#form"> <!-- data atributos personalizados boo-->
+      <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
+        <!-- div con id addNew que al hacer clic en él se abrirá el formulario modal para agregar una nueva tarea. -->
         <span>Agregar Tarea</span>
-        <!-- span s un contenedor en línea. Sirve para                              aplicar estilo al texto o agrupar elementos en línea.  -->
-        <span class="fa fa-plus-circle"></span> <!-- representa un cambio en el estado -->
+        <!-- span que contiene el texto Agregar Tarea el span sirve para aplicar estilos css al texto. -->
+        <span class="fa fa-plus-circle"></span>
+        <!-- span que contiene el icono de un signo más el span sirve para aplicar estilos css al icono. -->
       </div>
 
-      
 
-      <h5 class="tareas text-center my-3">Tareas</h5> <!-- para ver las tareas creadas  -->
-      <div id="tasks"></div> <!-- para ver las tareas creadas  -->
+
+      <h5 id="titulo_tareas" class="tareas text-center my-3">Tareas</h5>
+      <!-- H5 es un encabezado de nivel 5 con clase tareas centrado con margen de 3. -->
+      <div id="tasks"></div> <!-- div que contiene las tareas que se mostrarán en la página web. -->
+      
     </div>
+
+    <div class="d-flex justify-content-center">
+      <button id="bt-info" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#detalleTecnologiasModal">
+        <p class="paragraph">Click Aquí</p>
+        <span class="icon-wrapper">
+          <i class="fas fa-info-circle"></i>
+        </span>
+      </button>
+    </div>
+
+    
   </div>
 
 
+
   <!-- el formulario modal viene de bootstrap-->
-  <form class="modal fade animate__animated animate__pulse" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form class="modal fade animate__animated animate__pulse" id="form" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <!--  FORM representa una sección de un documento que contiene 
                                   controles interactivos que permiten a un usuario enviar 
                                   información a un servidor web-->
 
     <div class="modal-dialog"> <!--  dialogo de la ventana modal -->
-      <div class="modal-content">
+      <div class="modal-content"> <!--  contenido de la ventana modal -->
         <div class="modal-header"> <!-- encabezado de la ventana modal  -->
           <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Tarea</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <!-- caracteristicas del boton  viene desde bootraps-->
         </div>
-
-        <div>
-          <div id="msg"></div> <!-- se usa despues para mostrar informaci[on ]-->
-        </div>
         <div class="modal-body"> <!--  cuerpo de la venta a modal-->
-          <p>Titulo de Tarea</p>
-          <input type="text" class="form-control" name="textInput" id="textInput"/>
-          
+          <p>Titulo de Tarea</p> <!--  parrafo de la ventana modal -->
+          <input type="text" class="form-control" name="textInput" id="textInput" />
+          <!--  input es un elemento de formulario que permite al usuario introducir nombre de la tarea -->
+
           <br />
-          <p>Fecha de Ejecucion</p>
-            <input type="date" class="form-control" name="dateInput" id="dateInput" />
-            <br />
-          <p>Descriptción</p>
+          <p>Fecha de Ejecucion</p> <!--  parrafo de la ventana modal -->
+          <input type="date" class="form-control" name="dateInput" id="dateInput" />
+          <!--  input es un elemento de formulario que permite al usuario introducir fecha de la tarea -->
+          <br /> <!--  salto de línea -->
+          <p>Descriptción</p> <!--  parrafo de la ventana modal -->
           <textarea name="textarea" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+          <!--  textarea es un elemento de formulario que permite al usuario introducir descripción de la tarea -->
         </div>
         <div class="modal-footer"> <!--  pie de la ventana modal -->
 
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             <p class="paragraph"> Cerrar </p>
             <span class="icon-wrapper">
-              <svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z"/></svg>
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z" />
+              </svg>
             </span>
           </button>
 
           <button type="submit" id="add" class="btn btn-primary">
             <p class="paragraph"> Agregar </p>
             <span class="icon-wrapper">
-              <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23.681 6.158-5.838-5.838c-.197-.197-.47-.319-.771-.32h-15.98c-.603 0-1.091.489-1.091 1.091v21.817c0 .603.489 1.091 1.091 1.091h21.817c.603 0 1.091-.489 1.091-1.091v-15.98c0-.301-.122-.574-.32-.771zm-17.132-3.976h6.546v5.819h-6.549zm0 19.635v-5.818h10.905v5.818zm15.273 0h-2.185v-6.908c0-.603-.489-1.091-1.091-1.091h-13.091c-.603 0-1.091.489-1.091 1.091v6.909h-2.182v-19.637h2.182v6.909c0 .603.489 1.091 1.091 1.091h8.728c.603 0 1.091-.489 1.091-1.091v-6.909h1.344l5.199 5.199z"/></svg>
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m23.681 6.158-5.838-5.838c-.197-.197-.47-.319-.771-.32h-15.98c-.603 0-1.091.489-1.091 1.091v21.817c0 .603.489 1.091 1.091 1.091h21.817c.603 0 1.091-.489 1.091-1.091v-15.98c0-.301-.122-.574-.32-.771zm-17.132-3.976h6.546v5.819h-6.549zm0 19.635v-5.818h10.905v5.818zm15.273 0h-2.185v-6.908c0-.603-.489-1.091-1.091-1.091h-13.091c-.603 0-1.091.489-1.091 1.091v6.909h-2.182v-19.637h2.182v6.909c0 .603.489 1.091 1.091 1.091h8.728c.603 0 1.091-.489 1.091-1.091v-6.909h1.344l5.199 5.199z" />
+              </svg>
             </span>
           </button>
 
@@ -107,29 +167,95 @@ Samuel Andres Leon Valencia
   </form>
 
 
-  <!-- hasta aca el formulario modal viene de bootstrap-->
-  <!-- MODAL PLAY AUDIO -->
-  <div class="modal fade" id="modalAudio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false" data-backdrop="static">
+
+
+  <!-- Modal de edición de tarea -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Tarea</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--  Formulario de edición -->
+          <form id="editForm">
+            <div class="mb-3">
+              <label for="editTextInput" class="form-label">Título de la Tarea</label>
+              <!--  input es un elemento de formulario que permite al usuario introducir nombre de la tarea -->
+              <input type="text" class="form-control" id="editTextInput">
+            </div>
+            <div class="mb-3">
+              <label for="editDateInput" class="form-label">Fecha de Ejecución</label>
+              <!--  input es un elemento de formulario que permite al usuario introducir fecha de la tarea -->
+              <input type="date" class="form-control" id="editDateInput">
+            </div>
+            <div class="mb-3">
+              <label for="editTextarea" class="form-label">Descripción</label>
+              <!--  textarea es un elemento de formulario que permite al usuario introducir descripción de la tarea -->
+              <textarea class="form-control" id="editTextarea" rows="3"></textarea>
+            </div>
+
+            <div class="modal-footer"> <!--  pie de la ventana modal -->
+
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                <p class="paragraph"> Cerrar </p> <!--  texto del botón -->
+                <span class="icon-wrapper"> <!--  span que contiene el icono del botón -->
+                  <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+                  <svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z" />
+                  </svg>
+                </span>
+              </button>
+
+              <button type="submit" id="bteditar" class="btn btn-primary">
+                <p class="paragraph"> Guardar </p>
+                <span class="icon-wrapper">
+                  <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+                  <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m23.681 6.158-5.838-5.838c-.197-.197-.47-.319-.771-.32h-15.98c-.603 0-1.091.489-1.091 1.091v21.817c0 .603.489 1.091 1.091 1.091h21.817c.603 0 1.091-.489 1.091-1.091v-15.98c0-.301-.122-.574-.32-.771zm-17.132-3.976h6.546v5.819h-6.549zm0 19.635v-5.818h10.905v5.818zm15.273 0h-2.185v-6.908c0-.603-.489-1.091-1.091-1.091h-13.091c-.603 0-1.091.489-1.091 1.091v6.909h-2.182v-19.637h2.182v6.909c0 .603.489 1.091 1.091 1.091h8.728c.603 0 1.091-.489 1.091-1.091v-6.909h1.344l5.199 5.199z" />
+                  </svg>
+                </span>
+              </button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal para advertir al usuario de la tormenta perfecta y pueda aceptar el riesgo para escuchar el audio ya que los navegadores bloquean la reproducción automática de audio -->
+  <div class="modal fade" id="modalAudio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false"
+    data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body text-center">
           Advertencia: Entra bajo tu propio riesgo, se avecina la tormenta perfecta.
-  
+
           <!-- Botón play -->
           <p></p>
           <button class="btn btn-primary" id="play" data-dismiss="modal">
             <p class="paragraph"> Acepto el riesgo </p>
             <span class="icon-wrapper">
-              <svg version="1.1"
-                id="svg2" fill="#fff" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="ok.svg" inkscape:version="0.48.4 r9939"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="20px" height="20px"
-                viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
-              <path id="path15124" inkscape:connector-curvature="0" d="M1004.237,99.152l-611.44,611.441L194.492,512.288L0,706.779
-                l198.305,198.306l195.762,195.763L588.56,906.355L1200,294.916L1004.237,99.152z"/>
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg version="1.1" id="svg2" fill="#fff" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="ok.svg"
+                inkscape:version="0.48.4 r9939" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 1200 1200"
+                enable-background="new 0 0 1200 1200" xml:space="preserve">
+                <path id="path15124" inkscape:connector-curvature="0" d="M1004.237,99.152l-611.44,611.441L194.492,512.288L0,706.779
+                l198.305,198.306l195.762,195.763L588.56,906.355L1200,294.916L1004.237,99.152z" />
               </svg>
             </span>
           </button>
-
 
         </div>
       </div>
@@ -137,8 +263,116 @@ Samuel Andres Leon Valencia
   </div>
 
 
-  <script src="main.js"></script> <!-- embebido codigo script java -->
-  <script src="tormenta.js"></script> <!-- embebido codigo script java -->
+  <!-- Modal de confirmación para eliminar tarea -->
+  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí mostraremos el nombre de la tarea -->
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <p class="paragraph"> Cerrar </p>
+            <span class="icon-wrapper">
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z" />
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" id="confirmDeleteButton" class="btn btn-danger">
+            <p class="paragraph"> Eliminar </p>
+            <span class="icon-wrapper">
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg class="icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16"
+                  stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal de detalle de tecnologías utilizadas -->
+  <div class="modal fade" id="detalleTecnologiasModal" tabindex="-1" aria-labelledby="detalleTecnologiasModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleTecnologiasModalLabel">Detalle de Tecnologías Utilizadas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div>
+              <h4>Detalle de Tecnologías Utilizadas</h4>
+              <p>La aplicación "Tormenta Perfecta" se desarrolló utilizando las siguientes tecnologías y librerías:</p>
+              <ul>
+                <li><strong>HTML5:</strong> Utilizado para estructurar la página web, incluyendo la definición de la estructura de los elementos y el contenido de la página.</li>
+                <li><strong>CSS3:</strong> Utilizado para dar estilo y diseño a la página web, mediante la aplicación de reglas de estilo para modificar la apariencia de los elementos.</li>
+                <li><strong>Bootstrap 5:</strong> Utilizado como framework CSS para el diseño responsivo y los componentes de interfaz de usuario. Se cargaron los archivos CSS y JS de Bootstrap desde un CDN.</li>
+                <li><strong>JavaScript:</strong> Utilizado para la lógica de programación del lado del cliente, como la manipulación del DOM y la interacción con el usuario. Se incluyó un archivo JavaScript externo llamado "main.js" para implementar la funcionalidad de la aplicación.</li>
+                <li><strong>jQuery 3.7.1:</strong> Utilizado como una biblioteca JavaScript para simplificar la manipulación del DOM y las llamadas a AJAX. Se cargó el archivo jQuery desde un CDN.</li>
+                <li><strong>Font Awesome 5.15.4:</strong> Utilizado para incluir iconos en la interfaz de usuario, mejorando la estética y la usabilidad de la aplicación. Se incluyeron los archivos JS de Font Awesome desde un CDN.</li>
+              </ul>
+              <p>Cada una de estas tecnologías se utilizó de la siguiente manera en el desarrollo de la aplicación "Tormenta Perfecta":</p>
+              <ul>
+                <li><strong>HTML5:</strong> Se utilizó para definir la estructura de la página principal, incluyendo el encabezado, el cuerpo y el pie de página. También se emplearon elementos HTML como div, form, input, textarea y button para crear la interfaz de usuario.</li>
+                <li><strong>CSS3:</strong> Se utilizó para aplicar estilos personalizados a los elementos de la página, incluyendo colores, fuentes, márgenes y paddings, con el fin de mejorar la experiencia visual del usuario.</li>
+                <li><strong>Bootstrap 5:</strong> Se utilizó para aprovechar los estilos predefinidos y las clases de diseño responsivo proporcionadas por Bootstrap. Además, se utilizaron componentes de Bootstrap como modales, botones y formularios para construir la interfaz de usuario de manera rápida y eficiente.</li>
+                <li><strong>JavaScript:</strong> Se utilizó para implementar la lógica de negocio de la aplicación, como la gestión de tareas, la validación de formularios y la manipulación de datos almacenados en el Local Storage del navegador.</li>
+                <li><strong>jQuery:</strong> Se utilizó para simplificar la selección y manipulación de elementos HTML, así como para realizar llamadas a AJAX para interactuar con el servidor sin recargar la página. Esto facilitó la implementación de funcionalidades dinámicas y la mejora de la experiencia del usuario.</li>
+                <li><strong>Font Awesome:</strong> Se utilizó para incluir iconos visuales que mejoran la usabilidad y la estética de la aplicación. Por ejemplo, se utilizaron iconos de signo más y eliminar en el botón de agregar tarea y en la tabla de tareas, respectivamente.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <p class="paragraph"> Cerrar </p>
+            <span class="icon-wrapper">
+              <!--  svg es un formato de gráficos vectoriales bidimensionales basado en XML para proporcionar gráficos al botón -->
+              <svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z" />
+              </svg>
+            </span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- toast para mostrar mensajes emergwentes de sistema -->
+  <!-- Toast -->
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto"></strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+
+    </div>
+  </div>
+  <!-- Fin Toast -->
+
+
+
+  <script src="main.js"></script> <!-- embebido codigo script java  para generar crud en local storage -->
+  <script src="tormenta.js"></script> <!-- embebido codigo script java  para generar el efecto de lluvia -->
 </body>
 
 </html>

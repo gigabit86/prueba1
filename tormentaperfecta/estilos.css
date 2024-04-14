@@ -4,25 +4,25 @@
 */
 
 body {                           /* caracterisitcas del body */
-    font-family: sans-serif;
-    margin: 0 50px;
-    background-color: #202020;
+    font-family: sans-serif;   /* tipo de fuente */
+    margin: 0 50px;           /* margen */
+    background-color: #202020; /* color de fondo */
     overflow: hidden;          /* regular la visiblidad de los contenidos*/
     display: flex;               /* flexible para alterar sus dimensiones y llenar el espacio disponible */
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;
+    justify-content: center;  /* alinea los elementos flexibles en el contenedor flex */
+    align-items: center;     /* alinea los elementos flexibles en el contenedor flex */
+    height: 100vh;          /* altura */
   }
 
   .app {                        /* caracteristticas de  <div class="app"> */
-    background-color: #6a6464db;
-    width: 300px;
-    min-height: 500px;
-    border: 5px solid #343534;
-    border-radius: 8px;
-    padding: 15px;     
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    max-height: 80vh;
+    background-color: #0f0f0fdb;/* color de fondo */
+    width: 300px;              /* ancho */
+    min-height: 500px;        /* altura minima */
+    border: 5px solid #343534; /* borde */
+    border-radius: 8px;      /* radio del borde */
+    padding: 15px;          /* relleno */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* sombra */
+    max-height: 80vh;      /* altura maxima */
     overflow-y: auto;          /* para que aparezca la barra de desplazamiento vertical */
     overflow-x: hidden;        /* para que no aparezca la barra de desplazamiento horizontal */
      /*añade relleno entre el elemento y su contenido.*/
@@ -31,60 +31,61 @@ body {                           /* caracterisitcas del body */
   #addNew {                  /* caracteristicas de  <div id="addNew" */
     display: flex;
     justify-content: space-between;         /*Los items flex se distribuyen uniformemente sobre la línea*/
-    align-items: center;
-    background-color: rgba(35, 36, 35, 0.35);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
+    align-items: center;                  /*Los items flex se alinean en el centro de la línea*/
+    background-color: rgba(0, 255, 0, 0.45); /* color de fondo */
+    padding: 5px 10px;                    /* relleno */
+    border-radius: 5px;                 /* radio del borde */
+    cursor: pointer;                  /* cursor manito */
+    color: #fff;                    /* color de la letra */
   }
   .fa-plus {                     /* caracteristicas de <i class="fas fa-plus"></i>*/
-    background-color: #303030;
-    padding: 3px;
-    border-radius: 3px;
+    background-color: #303030;  /* color de fondo */
+    padding: 3px;              /* relleno */
+    border-radius: 3px;      /* radio del borde */
   }
 
   .titulo {                      /* caracteristicas de <h1 class="titulo"> */
-    color: #ffffff;
-    text-align: center;
+    color: #ffffff;           /* color de la letra */
+    text-align: center;     /* alineacion del texto */
+    font-size: 30px;       /* tamaño de la fuente */
   }
 
   .small {                      /* caracteristicas de <p class="small"> */
-    color: #fff;
+    color: #fff;             /* color de la letra */
   }
 
   .tareas {                      /* caracteristicas de <h2 class="tareas"> */
-    color: #fff;
-    text-align: center;
+    color: #fff;            /* color de la letra */
+    text-align: center;     /* alineacion del texto */
   }
 
 
   #msg {                        /* caracteriticas de  <div id="msg"></div>  */
-    color: red;
+    color: red;              /* color de la letra */
   }
 
 
   #tasks {                   /* caracteristicas de   <div id="tasks"></div>  */
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    display: grid;         /* grid */
+    grid-template-columns: 1fr; /* tamaño de las columnas */
+    gap: 14px;              /* espacio entre filas */
   }
   
   #tasks div {              /* caracteriticas de <div id="tasks"></div> */
-    border: 3px solid #4f504f;
-    background-color: #353535;
-    border-radius: 6px;
-    padding: 5px;
-    display: grid;
+    border: 2px solid #4f504f; /* borde */
+    background-color: #353535; /* color de fondo */
+    border-radius: 6px;      /* radio del borde */
+    padding: 5px;          /* relleno */
+    display: grid;       /* grid */
     gap: 4px;  /*especifica el tamaño de las canaletas, que es el espacio entre filas */
-    color: #fff;
+    color: #fff; /* color de la letra */
   }
 
  
   #tasks div .options {    /* caracteriticas de <div id="tasks"></div> */
-    justify-self: center;
-    display: flex;
-    gap: 20px;
+    justify-self: center; /* alineacion del texto */
+    display: flex;      /* flexible para alterar sus dimensiones y llenar el espacio disponible */
+    gap: 20px;         /* espacio entre filas */
   }
   
   #tasks div .options i {  /* caracteriticas de <div id="tasks"></div> */
@@ -92,37 +93,37 @@ body {                           /* caracterisitcas del body */
   }
 
 #msg {                        /* caracteriticas de  <div id="msg"></div>  */
-    color: red;
-    text-align: center;
-    padding: 5px;
+    color: red;             /* color de la letra */
+    text-align: center;  /* alineacion del texto */
+    padding: 5px;       /* relleno */
   }
 
   /* clases para agregar video como fondo */
 
 
-.container i {
-    position: absolute;
-    width: 2px;
-    height: 10px;
-    top: -10px;
-    background: #616060;
-    animation: lluvia linear infinite;
+.container i { /* caracteristicas de <i class="fas fa-cloud"></i> */
+    position: absolute; /* posicion absoluta */
+    width: 2px; /* ancho */
+    height: 10px; /* altura */
+    top: -10px; /* arriba */
+    background: #616060; /* color de fondo */
+    animation: lluvia linear infinite; /* animacion */
 }
 
 /* centrando contenido de del div */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container { /* caracteristicas de <div class="container"> */
+    display: flex; /* flexible para alterar sus dimensiones y llenar el espacio disponible */
+    justify-content: center; /* alinea los elementos flexibles en el contenedor flex */
+    align-items: center; /* alinea los elementos flexibles en el contenedor flex */
+    height: 100vh; /* altura */
 }
 
-@keyframes lluvia {
-    0% {
-        top: -10px;
+@keyframes lluvia { /* animacion */
+    0% { 
+        top: -10px; /* arriba */
     }
     100% {
-        top: 100vh;
+        top: 100vh; /* arriba */
     }
 }
 
@@ -131,31 +132,31 @@ body {                           /* caracterisitcas del body */
 
 /* clases para agregar video como fondo */
 #video_background {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1000;
-  overflow: hidden;
+  position: absolute; /* posicion absoluta */
+  bottom: 0px; /* abajo */
+  right: 0px; /* derecha */
+  min-width: 100%; /* ancho minimo */
+  min-height: 100%; /* altura minima */
+  width: auto; /* ancho */
+  height: auto; /* altura */
+  z-index: -1000; /* indice z */
+  overflow: hidden; /* ocultar contenido que se desborda */
   }
-  #video_pattern {
-  background:#fff;
-  position: fixed;
-  opacity: 0.8;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  #video_pattern { /* caracteristicas de <div id="video_pattern"> */
+  background:#fff; /* color de fondo */
+  position: fixed; /* posicion fija */
+  opacity: 0.8; /* opacidad */
+  left: 0px; /* izquierda */
+  top: 0px; /* arriba */ 
+  width: 100%; /* ancho */
+  height: 100%; /* altura */
+  z-index: 1; /* indice z */
   }
 
 
 
   .addNew:hover {                /* caracteristicas de  <div id="addNew" */
-    background-color: #696767;
+    background-color: #696767;  /* color de fondo */
   }
 
 
@@ -164,82 +165,97 @@ body {                           /* caracterisitcas del body */
 /* clases para agregar boton customizado */
 
 
-  .btn {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: none;
-    position: relative;
-    border-radius: 10px;
-    -webkit-box-shadow: 1px 1px 5px .2px #00000035;
-    box-shadow: 1px 1px 5px .2px #00000035;
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
-    transition-delay: .2s;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: space-between;
-    padding-top: 20px;
+  .btn { /* caracteristicas de <div class="btn"> */
+    cursor: pointer; /* cursor manito */ 
+    width: 40px; /* ancho del boton */
+    height: 40px; /* altura del boton */ 
+    border: none; /* borde */ 
+    position: relative; /* posicion relativa */ 
+    border-radius: 10px; /* radio del borde */ 
+    -webkit-box-shadow: 1px 1px 5px .2px #00000035; /* sombra */ 
+    box-shadow: 1px 1px 5px .2px #00000035; /* sombra */ 
+    -webkit-transition: .2s linear; /* tiempo de transicion de la animacion */ 
+    transition: .2s linear; /* tiempo de transicion de la animacion */ 
+    transition-delay: .2s; /* tiempo de transicion de la animacion */ 
+    display: -webkit-box; /* flexible para alterar sus dimensiones y llenar el espacio disponible */ 
+    display: -ms-flexbox; /* flexible para alterar sus dimensiones y llenar el espacio disponible */ 
+    display: flex; /* flexible para alterar sus dimensiones y llenar el espacio disponible */ 
+    -webkit-box-align: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    -ms-flex-align: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    align-items: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    -webkit-box-pack: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    -ms-flex-pack: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    justify-content: space-between; /* alinea los elementos flexibles en el contenedor flex */
+    padding-top: 20px; /* relleno superior */
   }
   
-  .btn:hover {
-    width: 150px;
-    transition-delay: .2s;
+
+  /* clases para agregar boton customizado  cunado se pasa el mouse por encima */
+  .btn:hover { /* caracteristicas de <div class="btn"> */ 
+    width: 150px; /* ancho del boton */
+    transition-delay: .2s; /* tiempo de transicion de la animacion */
   }
   
+  /* clases para agregar boton customizado  cunado se pasa el mouse por encima */
   .btn:hover > .paragraph {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition-delay: .4s;
-    transition-delay: .4s;
+    visibility: visible;/* visibilidad del parrafo */
+    opacity: 1; /* opacidad del parrafo */
+    -webkit-transition-delay: .4s; /* tiempo de transicion de la animacion */
+    transition-delay: .4s;/* tiempo de transicion de la animacion */
   }
   
   .btn:hover > .icon-wrapper .icon {
-    transform: scale(1.1);
+    transform: scale(1.1); /* escala */
   }
   
   .bnt:hover > .icon-wrapper .icon path {
-    stroke: black;
+    stroke: black; /* color de la letra */
   }
   
   .paragraph {
-    color: rgb(255, 255, 255);
-    visibility: hidden;
-    opacity: 0;
-    font-size: 13px;
-    margin-right: 20px;
-    padding-left: 20px;
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
-    font-weight: bold;
-    text-transform: uppercase;
+    color: rgb(255, 255, 255); /* color de la letra */
+    visibility: hidden; /* visibilidad */ 
+    opacity: 0; /* opacidad */ 
+    font-size: 13px; /* tamaño de la fuente */
+    margin-right: 20px; /* margen derecho */
+    padding-left: 20px; /* relleno */
+    -webkit-transition: .2s linear; /* tiempo de transicion de la animacion */
+    transition: .2s linear; /* tiempo de transicion de la animacion */
+    font-weight: bold; /* peso de la fuente */
+    text-transform: uppercase; /* transformacion del texto */
   }
   
-  .icon-wrapper {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .icon-wrapper { /* caracteristicas de <div class="icon-wrapper"> */ 
+    width: 40px; /* ancho */ 
+    height: 40px; /* altura */ 
+    position: absolute; /* posicion absoluta */ 
+    top: 0; /* arriba */ 
+    right: 0; /* derecha */ 
+    display: flex; /* flexible para alterar sus dimensiones y llenar el espacio disponible */ 
+    align-items: center; /* alinea los elementos flexibles en el contenedor flex */ 
+    justify-content: center; /* alinea los elementos flexibles en el contenedor flex */ 
   }
   
-  .icon {
-    transform: scale(.9);
-    transition: .2s linear;
+  .icon { /* caracteristicas de <div class="icon"> */ 
+    transform: scale(.9); /* escala */ 
+    transition: .2s linear; /* tiempo de transicion de la animacion */ 
   }
   
-  .icon path {
-    stroke: #ffffff;
-    stroke-width: 2px;
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
+  .icon path { /* caracteristicas de <div class="icon"> */ 
+    stroke: #ffffff; /* color de la letra */ 
+    stroke-width: 2px; /* ancho del borde */ 
+    -webkit-transition: .2s linear; /* tiempo de transicion de la animacion */ 
+    transition: .2s linear; /* tiempo de transicion de la animacion */ 
+  }
+
+
+  #liveToast { /* caracteristicas de <div id="liveToast"> */ 
+    position: fixed; /* posicion fija */ 
+    top: 10px; /* arriba */ 
+    right: 10px; /* derecha */ 
+    z-index: 9999; /* indice z */
+    min-width: 300px; /* ancho minimo */ 
+    max-width: 400px; /* ancho maximo */ 
+    overflow: hidden; /* ocultar contenido que se desborda */ 
+    pointer-events: none; /* eventos del puntero */
   }

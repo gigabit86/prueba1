@@ -1,0 +1,238 @@
+<!-- Autor: Samuel León Valencia -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres UTF-8 para que se muestren correctamente los acentos y caracteres especiales -->
+    <meta charset="UTF-8">
+    
+    <!-- Etiqueta meta para la configuración del viewport en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página -->
+    <title>Registro de Clientes</title>
+    
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Script de Bootstrap (JavaScript + Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+    <!-- jQuery (biblioteca JavaScript) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <!-- Enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Enlace al archivo JavaScript de Font Awesome para iconos -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-dark">
+    <!-- Contenedor secundario -->
+    <div class="container shadow p-3 bg-body container-fondo">
+
+            <!-- Barra de navegación -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo2.svg" alt="" class="d-inline-block align-text-top">
+                </a>
+                <!-- Título centrado -->
+                <div class="d-flex justify-content-center align-items-center flex-grow-1">
+                    <h2 class="text-center mb-0">Respuesta a la Pregunta 1 y 2</h2>
+                </div>
+            </nav>
+
+        <!-- Row para el contenido -->
+        <div class="row mt-5 d-flex justify-content-center">
+            <!-- Columna derecha -->
+            <div class="col-10 shadow">
+                <!-- Título de la lista de clientes -->
+                <h4>Clientes Registrados</h4>
+                <!-- Menu de opciones Agrergar Cliente -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistroCliente"><i class="fas fa-plus"></i>
+                        Agregar Cliente</button>
+                </div>
+                
+                <!-- Campo de búsqueda -->
+                <div class="form-group">
+                    <label for="filtroEdad">Filtro:</label>
+                    <input type="text" class="form-control" id="busqueda" placeholder="Buscar por nombre o RUN del cliente">
+                </div>
+                <!-- Tabla de clientes -->
+                <table class="table" id="tablaClientes">
+                    <thead>
+                        <!-- Encabezados de la tabla -->
+                        <tr>
+                            <th scope="col">#</th>
+                            <th class="celda-encabezado" id="ordenarNombre" scope="col">Nombre</th>
+                            <th class="celda-encabezado" id="ordenarRun" scope="col">RUN</th>
+                            <th class="celda-encabezado" id="ordenarEdad" scope="col">Edad</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTablaClientes">
+                        <!-- Cuerpo de la tabla -->
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div class="col-8 mt-5">
+                <h4>Detalle de Tecnologías Utilizadas</h4>
+                <p>La aplicación se desarrolló utilizando las siguientes tecnologías y librerías:</p>
+                <ul>
+                    <li><strong>HTML5:</strong> Utilizado para estructurar la página web.</li>
+                    <li><strong>CSS3:</strong> Utilizado para dar estilo y diseño a la página web.</li>
+                    <li><strong>Bootstrap:</strong> Utilizado como framework CSS para el diseño responsivo y los componentes de interfaz de usuario.</li>
+                    <li><strong>JavaScript:</strong> Utilizado para la lógica de programación del lado del cliente, como la manipulación del DOM y la interacción con el usuario.</li>
+                    <li><strong>jQuery:</strong> Utilizado como una biblioteca JavaScript para simplificar la manipulación del DOM y las llamadas a AJAX.</li>
+                    <li><strong>Font Awesome:</strong> Utilizado para incluir iconos en la interfaz de usuario.</li>
+                </ul>
+                <p>Cada una de estas tecnologías se utilizó de la siguiente manera:</p>
+                <ul>
+                    <li><strong>HTML5:</strong> Para estructurar los elementos de la página, como formularios, tablas y modales.</li>
+                    <li><strong>CSS3:</strong> Para aplicar estilos personalizados a los elementos de la página y mejorar la experiencia visual del usuario.</li>
+                    <li><strong>Bootstrap:</strong> Para aprovechar los estilos predefinidos, las clases de diseño responsivo y los componentes interactivos, como modales y botones.</li>
+                    <li><strong>JavaScript:</strong> Para implementar la lógica de negocio de la aplicación, como la validación de formularios, la manipulación de datos y las interacciones de usuario.</li>
+                    <li><strong>jQuery:</strong> Para simplificar la selección y manipulación de elementos HTML, así como para realizar llamadas a AJAX para interactuar con el servidor sin recargar la página.</li>
+                    <li><strong>Font Awesome:</strong> Para incluir iconos visuales que mejoran la usabilidad y la estética de la aplicación, como los iconos de eliminar y editar en la tabla de clientes.</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        
+    </div>
+
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalConfirmacionLabel">Confirmación de Eliminación</h5>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar este cliente?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btnEliminarConfirmado">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast para mostrar errores del formulario en un toast arriba a la derecha -->
+    <div id="toastMensaje" class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="errorToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Mensaje Sistema</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body" id="toastBody"></div>
+        </div>
+    </div>
+
+
+    <!-- Modal para registro de clientes -->
+<div class="modal fade" id="modalRegistroCliente" tabindex="-1" aria-labelledby="modalRegistroClienteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRegistroClienteLabel">Registro de Clientes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registroForm" class="mb-4">
+                    <!-- Campo para ingresar nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <!-- Input para ingresar nombre -->
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese el nombre del cliente" maxlength="50">
+                    </div>
+                    <!-- Campo para ingresar RUN -->
+                    <div class="form-group">
+                        <label for="run">RUN:</label>
+                        <!-- Input para ingresar RUN -->
+                        <input type="text" id="run" class="form-control" placeholder="Ingrese el RUN del cliente ej: 12345678-9" maxlength="12">
+                    </div>
+                    <!-- Campo para ingresar edad -->
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <!-- Input para ingresar edad -->
+                        <input type="number" id="edad" class="form-control" placeholder="Ingrese la edad del cliente máximo 120 años" maxlength="3">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- Botón para registrar -->
+                <button type="button" class="btn btn-primary" id="btnRegistrarCliente"><i class="fas fa-save"></i>
+                    Registrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i>
+                    Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal para editar clientes -->
+<div class="modal fade" id="modalEditarCliente" tabindex="-1" aria-labelledby="modalEditarClienteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEditarClienteLabel">Editar Cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edicionForm" class="mb-4">
+                    <!-- Campo para ingresar nombre -->
+                    <div class="form-group">
+                        <label for="nombreEditar">Nombre:</label>
+                        <!-- Input para ingresar nombre -->
+                        <input type="text" id="nombreEditar" class="form-control" placeholder="Ingrese el nombre del cliente" maxlength="50">
+                    </div>
+                    <!-- Campo para ingresar RUN -->
+                    <div class="form-group">
+                        <label for="runEditar">RUN:</label>
+                        <!-- Input para ingresar RUN -->
+                        <input type="text" id="runEditar" class="form-control" placeholder="Ingrese el RUN del cliente ej: 12345678-9" maxlength="12" disabled>
+                    </div>
+                    <!-- Campo para ingresar edad -->
+                    <div class="form-group">
+                        <label for="edadEditar">Edad:</label>
+                        <!-- Input para ingresar edad -->
+                        <input type="number" id="edadEditar" class="form-control" placeholder="Ingrese la edad del cliente máximo 120 años" maxlength="3">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- Botón para guardar cambios -->
+                <button type="button" class="btn btn-primary" id="btnGuardarCambios"><i class="fas fa-save"></i>
+                    Guardar Cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i>
+                    Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Script personalizado -->
+    <script src="app.js"></script>
+</body>
+
+</html>

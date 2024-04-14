@@ -1,1 +1,65 @@
-Hola..
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Centrado</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(#000000, #0e0e0e);
+      overflow: hidden;
+    }
+
+    .menu {
+      text-align: center;
+    }
+
+    .menu button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .menu button:hover {
+      background-color: #e82c0c;
+    }
+
+    .galaxy {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://wallpapercave.com/wp/wp1858777.jpg');
+      background-size: cover;
+      z-index: -1;
+      animation: galaxy 30s linear infinite;
+    }
+
+    @keyframes galaxy {
+      0% { transform: scale(1) translateZ(0); }
+      100% { transform: scale(1.2) translateZ(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="galaxy"></div>
+  <div class="menu">
+    <button onclick="location.href='#'">pregunta_uno_dos</button>
+    <button onclick="location.href='#'">Tormenta Perfecta</button>
+    <button onclick="location.href='#'">tarjeta_credito</button>
+  </div>
+</body>
+</html>

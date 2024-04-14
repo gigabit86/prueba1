@@ -1,0 +1,56 @@
+/* Autor: Samuel León Valencia */
+body{
+background: #dddbdb;
+font-family: 'Roboto', sans-serif;
+color: #000;
+}
+
+
+#card-image {
+    position: absolute;
+    left: 28rem;
+    top: 0rem;
+}
+
+#tarjeta {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.555);
+    /* fondo degradado */
+    background: linear-gradient(45deg, #000, #181969);
+    padding: 10px;
+    color: #fff;
+}
+
+.BtnDisabled {
+    background: #f8f3f3;
+    color: #000;
+    border: 1px solid #000;
+    cursor: not-allowed;
+}
+
+.Btn{
+    background: #3c3c3d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.invalido {
+    color: red;
+    font-weight: 100;
+    }
+
+.container-fondo {
+    padding-bottom: 1rem;
+}
