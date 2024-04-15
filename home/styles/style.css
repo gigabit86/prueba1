@@ -1,0 +1,12 @@
+/* Autor: Samuel León Valencia */
+body{
+background: #dddbdb;
+font-family: 'Roboto', sans-serif;
+color: #000;
+}
+
+/* Agrega estilos personalizados si es necesario */
+.accordion-button::after {
+    /* Estilos de la flecha del acordeón */
+    transition: transform 0.3s ease; /* Transición suave */
+  }

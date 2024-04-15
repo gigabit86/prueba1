@@ -1,0 +1,28 @@
+LocalStorage: El LocalStorage es una característica del navegador web que permite a las aplicaciones web almacenar datos de manera persistente en el dispositivo del usuario. 
+Estos datos permanecen disponibles incluso después de cerrar y volver a abrir el navegador, lo que los hace útiles para almacenar información como preferencias de usuario, datos de sesión, 
+configuraciones personalizadas y otra información relevante para la aplicación.
+
+Uso de LocalStorage: Para usar el LocalStorage en una aplicación web, puedes utilizar la API proporcionada por los navegadores web modernos. Algunas operaciones comunes incluyen:
+
+Almacenar datos: Puedes almacenar datos en el LocalStorage utilizando el método setItem() proporcionado por el objeto localStorage. Por ejemplo:
+javascript
+
+
+localStorage.setItem('clave', 'valor');
+Recuperar datos: Puedes recuperar datos del LocalStorage utilizando el método getItem(). Por ejemplo:
+javascript
+
+
+var valor = localStorage.getItem('clave');
+Eliminar datos: Puedes eliminar datos del LocalStorage utilizando el método removeItem(). Por ejemplo:
+javascript
+
+
+localStorage.removeItem('clave');
+Eliminar todos los datos: También puedes eliminar todos los datos almacenados en el LocalStorage utilizando el método clear(). Por ejemplo:
+javascript
+
+
+localStorage.clear();
+Es importante recordar que el LocalStorage solo permite almacenar datos en forma de cadenas de texto. Si necesitas almacenar objetos JavaScript, 
+debes convertirlos a cadenas JSON utilizando JSON.stringify() antes de almacenarlos, y luego convertirlos de nuevo a objetos JavaScript utilizando JSON.parse() cuando los recuperes del LocalStorage.

@@ -1,0 +1,122 @@
+- Defincion Backend Frontend
+
+Backend:
+El Backend es la parte de un sistema informático que se encarga de gestionar y procesar la lógica de negocio, la lógica de la aplicación y los datos. Es la capa que se encuentra en el servidor y se encarga de interactuar con la base de datos, realizar cálculos, autenticar usuarios, y servir los datos y recursos necesarios para que la aplicación Frontend funcione correctamente. En resumen, el Backend es responsable de todo lo que sucede "detrás de escena" en una aplicación web o software.
+
+Frontend:
+El Frontend, también conocido como interfaz de usuario o cliente, es la parte de un sistema informático que interactúa directamente con los usuarios finales. Consiste en todas las tecnologías y componentes visibles y accesibles por los usuarios, como el diseño, la estructura, la navegación y la interacción de una aplicación web o software. En otras palabras, el Frontend es la capa de presentación que los usuarios ven y con la que interactúan directamente, incluyendo la interfaz gráfica de usuario, los botones, formularios, imágenes, y todo el contenido visual y funcional de una aplicación.
+
+
+-Que es CSS , JAVASCRIPT,PHP
+
+CSS (Cascading Style Sheets):
+CSS es un lenguaje de estilo utilizado para describir la presentación de documentos HTML (o XML). Define cómo se deben mostrar los elementos HTML en una página web, incluyendo aspectos como el diseño, el formato, los colores, las fuentes y otros estilos visuales. Con CSS, puedes controlar la apariencia y el diseño de tu sitio web de manera efectiva, separando así la estructura y el contenido HTML del estilo y la presentación visual.
+
+JavaScript:
+JavaScript es un lenguaje de programación de alto nivel que se utiliza principalmente para agregar interactividad y dinamismo a las páginas web. Es un lenguaje de scripting del lado del cliente, lo que significa que se ejecuta en el navegador web del usuario final. Con JavaScript, puedes manipular el contenido HTML, responder a eventos del usuario, validar formularios, crear animaciones, realizar peticiones al servidor y muchas otras acciones que mejoran la experiencia del usuario en una página web.
+
+PHP (Hypertext Preprocessor):
+PHP es un lenguaje de programación de uso general del lado del servidor, diseñado especialmente para el desarrollo web. Se utiliza para crear sitios web dinámicos e interactivos al permitir la generación de contenido web en tiempo real. PHP se ejecuta en el servidor web y se integra fácilmente con HTML para generar contenido web dinámico. Se utiliza comúnmente para interactuar con bases de datos, procesar formularios, crear sesiones de usuario, gestionar cookies y realizar otras tareas del lado del servidor en aplicaciones web.
+
+
+
+- Estructura de HTML
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la página</title>
+    <!-- Enlaces a archivos CSS, scripts, y otros recursos -->
+</head>
+<body>
+    <!-- Contenido de la página -->
+    <header>
+        <!-- Encabezado de la página, incluyendo el logotipo, menú de navegación, etc. -->
+    </header>
+
+    <main>
+        <!-- Contenido principal de la página, como artículos, secciones, etc. -->
+    </main>
+
+    <footer>
+        <!-- Pie de página, que puede contener información de contacto, enlaces adicionales, etc. -->
+    </footer>
+
+    <!-- Scripts de JavaScript al final del cuerpo del documento -->
+</body>
+</html>
+
+
+<!DOCTYPE html>: Esta declaración define el tipo de documento como HTML5, la última versión del estándar HTML.
+
+<html lang="es">: El elemento <html> es la raíz del documento HTML. El atributo lang especifica el idioma del contenido de la página.
+
+<head>: Aquí se incluyen metadatos, enlaces a hojas de estilo CSS, scripts, y otras configuraciones del documento que no se mostrarán directamente en la página.
+
+<meta charset="UTF-8">: Esta metaetiqueta define el juego de caracteres utilizado en el documento como UTF-8, que es compatible con la mayoría de los idiomas y caracteres especiales.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Esta metaetiqueta define cómo el navegador debe escalar y ajustar la página para adaptarse a diferentes dispositivos y tamaños de pantalla.
+
+<title>: Este elemento define el título de la página, que se mostrará en la barra de título del navegador o en las pestañas del navegador.
+
+<body>: Aquí se encuentra todo el contenido visible de la página, incluyendo encabezados, pies de página, imágenes, texto, formularios, etc.
+
+<header>, <main>, <footer>: Estos elementos son secciones semánticas que ayudan a organizar el contenido de la página en partes lógicas como encabezado, contenido principal y pie de página.
+
+Scripts y enlaces al final del cuerpo del documento: Se recomienda colocar los scripts JavaScript y los enlaces a hojas de estilo CSS al final del cuerpo del documento para que la página se cargue más rápido y se procese antes el contenido principal.
+
+
+
+- Tag FORM, Input (Submit,text)
+
+
+Etiqueta <form>:
+La etiqueta <form> se utiliza para crear un formulario en HTML. Es un contenedor que encapsula los campos de entrada y los elementos de envío de datos. La estructura básica de una etiqueta <form> es la siguiente:
+
+<form action="URL_del_destino" method="método_de_envío">
+    <!-- Campos de entrada y elementos de formulario aquí -->
+</form>
+
+El atributo action especifica la URL a la que se enviarán los datos del formulario para ser procesados.
+El atributo method define el método HTTP utilizado para enviar los datos del formulario. Puede ser "get" o "post".
+Etiqueta <input>:
+La etiqueta <input> se utiliza para crear elementos de entrada en un formulario. Puede tomar diferentes valores para el atributo type, que determina el tipo de entrada que se creará. Algunos valores comunes para type son:
+
+type="text": Crea un campo de texto para que el usuario ingrese texto.
+type="submit": Crea un botón de envío que permite enviar el formulario.
+type="checkbox": Crea una casilla de verificación para que el usuario seleccione una opción.
+type="radio": Crea un botón de opción para que el usuario seleccione una opción entre varias.
+type="password": Crea un campo de contraseña donde el texto ingresado se muestra como puntos.
+type="date": Crea un campo de fecha para que el usuario seleccione una fecha.
+
+
+
+
+- Interaccion de HTML con CSS y PHP en un sitio Web
+
+
+En un sitio web típico, HTML, CSS y PHP interactúan de la siguiente manera:
+
+HTML (HyperText Markup Language):
+
+HTML proporciona la estructura básica y el contenido del sitio web. Define la semántica y la disposición de los elementos como encabezados, párrafos, listas, imágenes, enlaces, formularios, etc.
+Los archivos HTML se crean con extensiones .html o .htm y contienen el contenido visible que se muestra a los usuarios en sus navegadores web.
+CSS (Cascading Style Sheets):
+
+CSS se utiliza para aplicar estilos visuales a los elementos HTML definidos en la estructura del sitio web. Define el diseño, la apariencia y la presentación del contenido HTML.
+Los archivos CSS se crean con extensión .css y contienen reglas de estilo que se aplican a los elementos HTML, como colores, fuentes, márgenes, bordes, espaciado, alineación, etc.
+PHP (Hypertext Preprocessor):
+
+PHP es un lenguaje de programación del lado del servidor que se utiliza para generar contenido dinámico en el sitio web. Permite la interacción con bases de datos, el procesamiento de formularios, la autenticación de usuarios y otras tareas del lado del servidor.
+Los archivos PHP se crean con extensión .php y contienen código PHP incrustado que se ejecuta en el servidor antes de que se envíe el contenido HTML al navegador del usuario.
+PHP puede generar contenido HTML dinámicamente basado en la entrada del usuario, los datos de la base de datos, o cualquier otra lógica de programación requerida.
+La interacción entre HTML, CSS y PHP en un sitio web comúnmente implica lo siguiente:
+
+HTML proporciona la estructura básica y el contenido del sitio.
+CSS aplica estilos visuales al contenido HTML para mejorar su apariencia.
+PHP genera contenido dinámico basado en datos y lógica de programación, y se incrusta dentro del HTML para producir páginas web personalizadas y dinámicas.
+El resultado final es una página web completa que combina la estructura y el contenido HTML con los estilos CSS y el contenido dinámico generado por PHP.
+
